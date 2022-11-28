@@ -19,8 +19,6 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/gerardo-cipriano-392509155/]
-
 
 
 <!-- PROJECT LOGO -->
