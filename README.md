@@ -19,8 +19,6 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/gerardo-cipriano-392509155/]
-
 
 
 <!-- PROJECT LOGO -->
@@ -149,16 +147,22 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
+Mandatory features:
 - [ ] Arduino Development
     - [ ] Temperature and humidity sampling with arduino
     - [ ] Network connection via ethernet shield
     - [ ] Connection to MySQL DB
-        - [ ] Writing measurements on DB
+    - [ ] Writing measurements on DB
 
 - [ ] Develop web portal
     - [ ] Build HTML, CSS and JS
     - [ ] Connection to MySQL DB
     - [ ] Show measurements data
+
+Optional features:
+
+- [ ] Forcing collect of temperature and humidity via web interface
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
