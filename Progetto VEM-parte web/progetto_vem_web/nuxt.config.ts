@@ -2,5 +2,4 @@
 export default defineNuxtConfig({
     srcDir: "src",
     ssr: false
-
 })

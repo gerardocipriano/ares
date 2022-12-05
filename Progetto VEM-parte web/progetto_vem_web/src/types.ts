@@ -1,8 +1,8 @@
-export interface Prova {
+export interface Measurements {
     id: number,
     sensor: string,
     location: string,
     temperature: number,
     humidity: number,
-    readingTime: string
+    readingTime: String
 }
