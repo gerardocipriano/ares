@@ -1,25 +1,25 @@
-globalThis._importMeta_={url:import.meta.url,env:process.env};import 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/node-fetch-native/dist/polyfill.mjs';
+globalThis._importMeta_={url:import.meta.url,env:process.env};import 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/node-fetch-native/dist/polyfill.mjs';
 import { Server } from 'http';
 import { tmpdir } from 'os';
 import { join } from 'path';
 import { mkdirSync } from 'fs';
 import { parentPort, threadId } from 'worker_threads';
-import { provider, isWindows } from 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/std-env/dist/index.mjs';
-import { eventHandler, setHeaders, sendRedirect, defineEventHandler, handleCacheHeaders, createEvent, getRequestHeader, getRequestHeaders, setResponseHeader, createApp, createRouter as createRouter$1, lazyEventHandler, toNodeListener, getQuery, createError } from 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/h3/dist/index.mjs';
-import mysql from 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/mysql2/promise.js';
-import { createRenderer } from 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import devalue from 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/@nuxt/devalue/dist/devalue.mjs';
-import { parseURL, withQuery, joinURL } from 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/ufo/dist/index.mjs';
-import destr from 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/destr/dist/index.mjs';
-import { snakeCase } from 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/scule/dist/index.mjs';
-import { createFetch as createFetch$1, Headers } from 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/ofetch/dist/node.mjs';
-import { createCall, createFetch } from 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/unenv/runtime/fetch/index.mjs';
-import { createHooks } from 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/hookable/dist/index.mjs';
-import { hash } from 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/ohash/dist/index.mjs';
-import { createStorage } from 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/unstorage/dist/drivers/fs.mjs';
-import defu from 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/defu/dist/defu.mjs';
-import { toRouteMatcher, createRouter } from 'file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/radix3/dist/index.mjs';
+import { provider, isWindows } from 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/std-env/dist/index.mjs';
+import { eventHandler, setHeaders, sendRedirect, defineEventHandler, handleCacheHeaders, createEvent, getRequestHeader, getRequestHeaders, setResponseHeader, createApp, createRouter as createRouter$1, lazyEventHandler, toNodeListener, getQuery, createError } from 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/h3/dist/index.mjs';
+import mysql from 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/mysql2/promise.js';
+import { createRenderer } from 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import devalue from 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/@nuxt/devalue/dist/devalue.mjs';
+import { parseURL, withQuery, joinURL } from 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/ufo/dist/index.mjs';
+import destr from 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/destr/dist/index.mjs';
+import { snakeCase } from 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/scule/dist/index.mjs';
+import { createFetch as createFetch$1, Headers } from 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/ofetch/dist/node.mjs';
+import { createCall, createFetch } from 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/unenv/runtime/fetch/index.mjs';
+import { createHooks } from 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/hookable/dist/index.mjs';
+import { hash } from 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/ohash/dist/index.mjs';
+import { createStorage } from 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/unstorage/dist/drivers/fs.mjs';
+import defu from 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/defu/dist/defu.mjs';
+import { toRouteMatcher, createRouter } from 'file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/radix3/dist/index.mjs';
 
 const _runtimeConfig = {"app":{"baseURL":"/","buildAssetsDir":"/_nuxt/","cdnURL":""},"nitro":{"routeRules":{"/__nuxt_error":{"cache":false}},"envPrefix":"NUXT_"},"public":{}};
 const ENV_PREFIX = "NITRO_";
@@ -78,7 +78,7 @@ const timingMiddleware = eventHandler((event) => {
   }.bind(event.res);
 });
 
-const serverAssets = [{"baseName":"server","dir":"C:/Users/Brayan/Documents/UNI/Anno 2/Laboratorio di Sistemi Embedded e IoT/progettoVEM- completo/ares/Progetto VEM-parte web/progetto_vem_web/src/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto VEM-parte web/progetto_vem_web/src/server/assets"}];
 
 const assets = createStorage();
 
@@ -92,10 +92,10 @@ const useStorage = () => storage;
 
 storage.mount('/assets', assets);
 
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\Brayan\\Documents\\UNI\\Anno 2\\Laboratorio di Sistemi Embedded e IoT\\progettoVEM- completo\\ares\\Progetto VEM-parte web\\progetto_vem_web","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\Brayan\\Documents\\UNI\\Anno 2\\Laboratorio di Sistemi Embedded e IoT\\progettoVEM- completo\\ares\\Progetto VEM-parte web\\progetto_vem_web\\src\\server","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\Brayan\\Documents\\UNI\\Anno 2\\Laboratorio di Sistemi Embedded e IoT\\progettoVEM- completo\\ares\\Progetto VEM-parte web\\progetto_vem_web\\.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\Brayan\\Documents\\UNI\\Anno 2\\Laboratorio di Sistemi Embedded e IoT\\progettoVEM- completo\\ares\\Progetto VEM-parte web\\progetto_vem_web\\.nuxt\\cache","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\maraw\\OneDrive\\desktop\\UNI\\SecondoAnno\\IoT\\Progetto\\ares\\Progetto VEM-parte web\\progetto_vem_web","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\maraw\\OneDrive\\desktop\\UNI\\SecondoAnno\\IoT\\Progetto\\ares\\Progetto VEM-parte web\\progetto_vem_web\\src\\server","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\maraw\\OneDrive\\desktop\\UNI\\SecondoAnno\\IoT\\Progetto\\ares\\Progetto VEM-parte web\\progetto_vem_web\\.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\maraw\\OneDrive\\desktop\\UNI\\SecondoAnno\\IoT\\Progetto\\ares\\Progetto VEM-parte web\\progetto_vem_web\\.nuxt\\cache","ignore":["**/node_modules/**","**/.git/**"]}));
 
 function defineRenderHandler(handler) {
   return eventHandler(async (event) => {
@@ -434,7 +434,7 @@ const errorHandler = (async function errorhandler(error, event) {
     redirect: "manual"
   }).catch(() => null) : null;
   if (!res) {
-    const { template } = await import('file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/@nuxt/ui-templates/dist/templates/error-dev.mjs') ;
+    const { template } = await import('file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/node_modules/@nuxt/ui-templates/dist/templates/error-dev.mjs') ;
     {
       errorObject.description = errorObject.message;
     }
@@ -454,13 +454,13 @@ const errorHandler = (async function errorhandler(error, event) {
   event.node.res.end(await res.text());
 });
 
-const _lazy_aYJZ78 = () => Promise.resolve().then(function () { return measurements$1; });
-const _lazy_CyZqz8 = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_qUSaEp = () => Promise.resolve().then(function () { return measurements$1; });
+const _lazy_KbjOn8 = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/api/measurements', handler: _lazy_aYJZ78, lazy: true, middleware: false, method: undefined },
-  { route: '/__nuxt_error', handler: _lazy_CyZqz8, lazy: true, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_CyZqz8, lazy: true, middleware: false, method: undefined }
+  { route: '/api/measurements', handler: _lazy_qUSaEp, lazy: true, middleware: false, method: undefined },
+  { route: '/__nuxt_error', handler: _lazy_KbjOn8, lazy: true, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_KbjOn8, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -572,7 +572,7 @@ function publicAssetsURL(...path) {
 
 globalThis.__buildAssetsURL = buildAssetsURL;
 globalThis.__publicAssetsURL = publicAssetsURL;
-const getClientManifest = () => import('file://C:/Users/Brayan/Documents/UNI/Anno%202/Laboratorio%20di%20Sistemi%20Embedded%20e%20IoT/progettoVEM-%20completo/ares/Progetto%20VEM-parte%20web/progetto_vem_web/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getClientManifest = () => import('file://C:/Users/maraw/OneDrive/desktop/UNI/SecondoAnno/IoT/Progetto/ares/Progetto%20VEM-parte%20web/progetto_vem_web/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
 const getStaticRenderedHead = () => Promise.resolve().then(function () { return _virtual__headStatic$1; }).then((r) => r.default || r);
 const getSPARenderer = lazyCachedFunction(async () => {
   const manifest = await getClientManifest();

@@ -17,10 +17,12 @@ img{
 table{
     font-family: arial, sans-serif;
 }
+
 img {
-    max-height: 200px;
+    max-height: 600px;
     max-width: 100%;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
