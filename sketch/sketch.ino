@@ -26,7 +26,7 @@ void setup() {
     // Initiate the query class instance
     MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
     // Save
-    dtostrf(50.125, 1, 1, temperature);
+    dtostrf(50.12, 1, 1, temperature);
     //sprintf(query, INSERT_DATA, 24, temperature);
     snprintf(query, sizeof(query), temperature, 10);
     // Execute the query

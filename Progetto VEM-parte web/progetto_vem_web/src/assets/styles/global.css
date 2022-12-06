@@ -16,8 +16,15 @@ img{
 
 table{
     font-family: arial, sans-serif;
+}
+img {
+    max-height: 200px;
+    max-width: 100%;
+}
+table {
     width: 100%;
     border-collapse: collapse;
+    text-align: center;
 }
 
 td, tr{
@@ -31,5 +38,12 @@ tr:nth-child(even){
     background-color: #dddddd;
 }
 
+#__nuxt > div > h1 {
+    text-align: center;
+    color: red;
+    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+}
 
- 
+#__nuxt > div > section > table > tr:nth-child(2) > td:nth-child(1) {
+    color: orangered;
+}
