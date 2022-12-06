@@ -43,6 +43,9 @@
       "assets": [
         "src/assets"
       ],
+      "assets/*": [
+        "src/assets/*"
+      ],
       "public": [
         "src/public"
       ],
