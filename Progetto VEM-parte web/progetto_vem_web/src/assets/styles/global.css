@@ -1,0 +1,14 @@
+template, h1{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+}
+
+template, img{
+    max-height: 200px;
+    max-width: 100%;
+}
+template, table{
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
