@@ -37,7 +37,7 @@ export default defineComponent({
         <th id="humidity">humidity</th>
       </tr>
       <tr v-for="x in measurements">
-        <th>{{ x.id }}</th>
+        <td>{{ x.id }}</td>
         <td>{{ x.readingTime }}</td>
         <td>{{ x.sensor }}</td>
         <td>{{ x.location }}</td>
