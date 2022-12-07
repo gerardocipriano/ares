@@ -2,26 +2,17 @@ body{
     background-color: rgba(57,62,70,255)!important;
 }
 
-h1{
-    text-align: center;
-    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
-}
-
 img {
-    height: auto;
     width: 100%;
-    
 }
 
 table {
     width: 100%;
-    border-collapse: collapse;
-    text-align: center;
     font-family: arial, sans-serif;
 }
-
-td, tr{
-    border-bottom: 1px solid red;
-    text-align: left;
-    /* padding: 8px; */
+#table {
+    border: 1px solid white;    
 }
+
+#table > tbody > tr:hover { background-color: rgba(57,62,70,255); };
+

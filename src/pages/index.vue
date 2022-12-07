@@ -22,7 +22,8 @@ export default defineComponent({
   <!-- <h1>ARES</h1> -->
   
     <section>
-    <table>
+    <table id="table" class="table table-bordered text-light text-center bg-dark">
+      <thead>
       <tr>
         <th id="readingTime">Data Lettura</th>
         <th id="sensor">Nome Sensore</th>
@@ -30,6 +31,8 @@ export default defineComponent({
         <th id="temperature">Temperatura</th>
         <th id="humidity">Umidità</th>
       </tr>
+    </thead>
+    <tbody>
       <tr v-for="x in measurements">
         <td>{{ x.reading_time }}</td>
         <td>{{ x.sensor }}</td>
@@ -37,6 +40,7 @@ export default defineComponent({
         <td>{{ x.temperature }}</td>
         <td>{{ x.humidity }}</td>
       </tr>
+    </tbody>
     </table>
   </section>
 
