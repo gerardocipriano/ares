@@ -35,30 +35,6 @@ export default defineComponent({
         <th id="temperature">temperature</th>
         <th id="humidity">humidity</th>
       </tr>
-      <tr>
-        <td>prova</td>
-        <td>prova</td>
-        <td>prova</td>
-        <td>prova</td>
-        <td>prova</td>
-        <td>prova</td>
-      </tr>
-      <tr>
-        <td>ciao</td>
-        <td>ciao</td>
-        <td>ciao</td>
-        <td>ciao</td>
-        <td>ciao</td>
-        <td>ciao</td>
-      </tr>
-      <tr>
-        <td>dati</td>
-        <td>dati</td>
-        <td>dati</td>
-        <td>dati</td>
-        <td>dati</td>
-        <td>dati</td>
-      </tr>
       <tr v-for="x in measurements">
         <td>{{ x.id }}</td>
         <td>{{ x.readingTime }}</td>
