@@ -24,7 +24,6 @@ export default defineComponent({
     <section>
     <table>
       <tr>
-        <th id="id">Id</th>
         <th id="readingTime">Data Lettura</th>
         <th id="sensor">Nome Sensore</th>
         <th id="location">Posizione</th>
@@ -32,7 +31,6 @@ export default defineComponent({
         <th id="humidity">Umidità</th>
       </tr>
       <tr v-for="x in measurements">
-        <td>{{ x.id }}</td>
         <td>{{ x.reading_time }}</td>
         <td>{{ x.sensor }}</td>
         <td>{{ x.location }}</td>
