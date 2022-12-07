@@ -25,7 +25,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/gerardocipriano/ares">
-    <img src="./src/assets/img/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Ares - Weather Services</h3>
@@ -78,7 +78,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/gerardocipriano/isw">
-    <img src="./src/assets/img/logo_transparent.png" alt="Logo" width="200">
+    <img src="images/logo_transparent.png" alt="Logo" width="200">
   </a>
   <p align="center">
 </div>
@@ -149,15 +149,15 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 Mandatory features:
 - [ ] Arduino Development
-    - [ ] Temperature and humidity sampling with arduino
-    - [ ] Network connection via ethernet shield
-    - [ ] Connection to MySQL DB
-    - [ ] Writing measurements on DB
+    - [x] Temperature and humidity sampling with arduino
+    - [x] Network connection via ethernet shield
+    - [x] Connection to MySQL DB
+    - [x] Writing measurements on DB
 
 - [ ] Develop web portal
-    - [ ] Build HTML, CSS and JS
-    - [ ] Connection to MySQL DB
-    - [ ] Show measurements data
+    - [x] Build HTML, CSS and JS
+    - [x] Connection to MySQL DB
+    - [x] Show measurements data
 
 Optional features:
 
