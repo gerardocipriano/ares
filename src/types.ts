@@ -1,8 +1,8 @@
 export interface Measurements {
-    id: number,
+    id: number;
     sensor: string,
     location: string,
     temperature: number,
     humidity: number,
-    readingTime: undefined
+    reading_time: String
 }

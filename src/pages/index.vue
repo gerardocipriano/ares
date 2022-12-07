@@ -8,15 +8,11 @@ export default defineComponent({
     }
   },
   methods: {
-
-    getdata() { console.log(this.measurements) },
     getMeasurements() {
-      $fetch("/api/measurements").then(response => this.measurements = response as Measurements[])
-      console.log(Response)
+      $fetch("/api/measurements").then(data => this.measurements = data as Measurements[])
     }
   },
   mounted() {
-    this.getdata(),
       this.getMeasurements()
   }
 })
@@ -28,16 +24,16 @@ export default defineComponent({
     <section>
     <table>
       <tr>
-        <th id="id">id</th>
-        <th id="readingTime">readingTime</th>
-        <th id="sensor">sensor</th>
-        <th id="location">location</th>
-        <th id="temperature">temperature</th>
-        <th id="humidity">humidity</th>
+        <th id="id">Id</th>
+        <th id="readingTime">Data Lettura</th>
+        <th id="sensor">Nome Sensore</th>
+        <th id="location">Posizione</th>
+        <th id="temperature">Temperatura</th>
+        <th id="humidity">Umidità</th>
       </tr>
       <tr v-for="x in measurements">
         <td>{{ x.id }}</td>
-        <td>{{ x.readingTime }}</td>
+        <td>{{ x.reading_time }}</td>
         <td>{{ x.sensor }}</td>
         <td>{{ x.location }}</td>
         <td>{{ x.temperature }}</td>
