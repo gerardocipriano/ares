@@ -36,7 +36,7 @@
     <a href="https://github.com/gerardocipriano/ares"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/gerardocipriano/ares">View Demo</a>
+    <a href="https://ares3.netlify.app/">View Demo</a>
     ·
     <a href="https://github.com/gerardocipriano/ares/issues">Report Bug</a>
     ·
