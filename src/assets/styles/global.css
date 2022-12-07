@@ -7,47 +7,21 @@ h1{
     font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
 }
 
-table{
-    font-family: arial, sans-serif;
-}
-
 img {
     height: auto;
     width: 100%;
     
 }
 
-
-#__nuxt > div > section{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-}
-
 table {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
+    font-family: arial, sans-serif;
 }
 
 td, tr{
-    color:darkgoldenrod;
-    border: 1px solid #dddddd;
+    border-bottom: 1px solid red;
     text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even){
-    background-color: #dddddd;
-}
-
-#__nuxt > div > h1 {
-    text-align: center;
-    color: red;
-    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
-}
-
-#__nuxt > div > section > table > tr:nth-child(2) > td:nth-child(1) {
-    color: orangered;
+    /* padding: 8px; */
 }

@@ -8,7 +8,7 @@
     </Head>
 
     <body>
-        <div class="container-md">
+        <div class="container" >
             <div>
                 <div class="row">
                     <div class="col-4 ">

@@ -8,11 +8,11 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@types/bootstrap": "^5.2.6",
     "bootstrap": "^5.2.3",
     "nuxt": "3.0.0"
   },
   "dependencies": {
-    "@types/bootstrap": "^5.2.6",
     "mysql2": "^2.3.3"
   }
 }
