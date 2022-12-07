@@ -24,9 +24,7 @@ export default defineComponent({
 
 <template>
   <!-- <h1>ARES</h1> -->
-    <center>
-      <img src="../static/img/logo.png"/>
-    </center>
+  
     <section>
     <table>
       <tr>

@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
     srcDir: "src",
     ssr: false,
-
     css:[
         "assets/styles/global.css",
         "bootstrap/dist/css/bootstrap.min.css"
