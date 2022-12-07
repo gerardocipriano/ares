@@ -25,7 +25,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/gerardocipriano/ares">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="src/assets/img/logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Ares - Weather Services</h3>
@@ -78,7 +78,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/gerardocipriano/isw">
-    <img src="images/logo_transparent.png" alt="Logo" width="200">
+    <img src="src/assets/img/logo_transparent.png" alt="Logo" width="200">
   </a>
   <p align="center">
 </div>
