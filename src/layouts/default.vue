@@ -8,7 +8,7 @@
     </Head>
 
     <body>
-        <div class="container-md" >
+        <div class="container-md">
             <div>
                 <div class="row">
                     <div class="col-4 ">
@@ -22,7 +22,15 @@
                 <div class="row ">
                     <slot />
                 </div>
-
+            </div>
+            <div class="btn">
+                <a href="#" aria-hidden="true" data-bs-toggle="backtotop" class="back-to-top" id="example">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
+                    </svg>
+                </a>
             </div>
         </div>
     </body>

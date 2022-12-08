@@ -15,23 +15,37 @@ export default defineComponent({
           for (var i in this.measurements) {
             let a: string[];
             a = this.measurements[i].reading_time.split('T'); //la lunghezza del vettore 'a' sarà sempre 2
-            console.log('primo', a, a.length);
-            a[1]= a[1].split('.')[0] //siccome ritorna il risultato in un array a me interessa salvare solo il primo elemento (ossia l'ora sena i millisecondi)
-            console.log('secondo', a, a.length);
-            this.measurements[i].reading_time = a[0]+ '\n'+a[1];
+            a[1] = a[1].split('.')[0] //siccome ritorna il risultato in un array a me interessa salvare solo il primo elemento (ossia l'ora sena i millisecondi)
+            this.measurements[i].reading_time = a[0] + '\n' + a[1];
           }
         })
     },
-    converTime(){
-      for (var i in this.measurements) {
-        this.measurements[i].reading_time.concat('\n')
+    backToTop() {
+      // Get the button
+      let mybutton: any = document.getElementById("myBtn");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () { scrollFunction() };
+
+      function scrollFunction(this: any) {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          this.mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
       }
-      
-      
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+
+
     }
   },
   mounted() {
-      this.getMeasurements()
+    this.getMeasurements()
   }
 })
 </script>
@@ -40,24 +54,25 @@ export default defineComponent({
   <section>
     <table id="table" class="table table-bordered text-light text-center bg-dark">
       <thead>
-      <tr>
-        <th id="readingTime">Data Lettura</th>
-        <th id="sensor">Nome Sensore</th>
-        <th id="location">Posizione</th>
-        <th id="temperature">Temperatura</th>
-        <th id="humidity">Umidità</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="x in measurements">
-        <td>{{ x.reading_time }}</td>
-        <td>{{ x.sensor }}</td>
-        <td>{{ x.location }}</td>
-        <td>{{ x.temperature }}</td>
-        <td>{{ x.humidity }}</td>
-      </tr>
-    </tbody>
+        <tr>
+          <th id="readingTime">Data Lettura</th>
+          <th id="sensor">Nome Sensore</th>
+          <th id="location">Posizione</th>
+          <th id="temperature">Temperatura</th>
+          <th id="humidity">Umidità</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="x in measurements">
+          <td>{{ x.reading_time }}</td>
+          <td>{{ x.sensor }}</td>
+          <td>{{ x.location }}</td>
+          <td>{{ x.temperature }}</td>
+          <td>{{ x.humidity }}</td>
+        </tr>
+      </tbody>
     </table>
   </section>
+  
 
 </template>
