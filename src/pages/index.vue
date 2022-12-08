@@ -9,7 +9,25 @@ export default defineComponent({
   },
   methods: {
     getMeasurements() {
-      $fetch("/api/measurements").then(data => this.measurements = data as Measurements[])
+      $fetch("/api/measurements")
+        .then((data) => {
+          this.measurements = data as Measurements[]
+          for (var i in this.measurements) {
+            let a: string[];
+            a = this.measurements[i].reading_time.split('T'); //la lunghezza del vettore 'a' sarà sempre 2
+            console.log('primo', a, a.length);
+            a[1]= a[1].split('.')[0] //siccome ritorna il risultato in un array a me interessa salvare solo il primo elemento (ossia l'ora sena i millisecondi)
+            console.log('secondo', a, a.length);
+            this.measurements[i].reading_time = a[0]+ '\n'+a[1];
+          }
+        })
+    },
+    converTime(){
+      for (var i in this.measurements) {
+        this.measurements[i].reading_time.concat('\n')
+      }
+      
+      
     }
   },
   mounted() {
@@ -19,9 +37,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <!-- <h1>ARES</h1> -->
-  
-    <section>
+  <section>
     <table id="table" class="table table-bordered text-light text-center bg-dark">
       <thead>
       <tr>

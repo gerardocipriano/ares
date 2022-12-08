@@ -3,5 +3,5 @@ export interface Measurements {
     location: string,
     temperature: number,
     humidity: number,
-    reading_time: String
+    reading_time: string
 }
