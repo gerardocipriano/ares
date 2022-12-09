@@ -6,7 +6,11 @@
         <Meta charset="utf-8" />
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
+
     <body>
+        <div class="container-md">
+
+        </div>
         <div class="container-md">
             <div>
                 <div class="row">
@@ -18,7 +22,19 @@
                     <div class="col-4 ">
                     </div>
                 </div>
-                <div class="row ">
+                <div class="row">
+                    <ul class="nav mb-5 justify-content-center ">
+                        <li class="nav-item mx-5">
+                            <div class="btn bg-dark">
+                                <NuxtLink to="/" class="nav-link  text-light" href="#">Home</NuxtLink>
+                            </div>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <div class="btn bg-dark">
+                                <NuxtLink to="/live" class="nav-link text-light " href="#">Live</NuxtLink>
+                            </div>
+                        </li>
+                    </ul>
                     <slot />
                 </div>
             </div>
@@ -41,5 +57,8 @@
     bottom: 20px;
     right: 20px;
 }
+/* .btn {
+    background-color: rgba(57,62,70,255);
+} */
 </style>
 
