@@ -50,4 +50,5 @@ export default defineComponent({
       </tbody>
     </table>
   </section>
+  <Live></Live>
 </template>
