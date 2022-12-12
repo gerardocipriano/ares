@@ -1,5 +1,5 @@
 body{
-    background-color: rgba(57,62,70,255)!important;
+    background-color: rgba(57,62,70,1)!important;
 }
 
 img {
@@ -10,9 +10,9 @@ table {
     width: 100%;
     font-family: arial, sans-serif;
 }
-#table {
+#table { 
     border: 1px solid white;    
 }
 
-#table > tbody > tr:hover { background-color: rgba(57,62,70,255); };
+#table > tbody > tr:hover { background-color: rgba(57,62,70,1); };
 
