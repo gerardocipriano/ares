@@ -29,7 +29,7 @@ export default defineComponent({
 
 <template>
   <section>
-    <table id="table" class="table table-bordered text-light text-center bg-dark">
+    <table id="table" class="table table-bordered text-center bg-dark">
       <thead>
         <tr>
           <th id="readingTime">Data Lettura</th>

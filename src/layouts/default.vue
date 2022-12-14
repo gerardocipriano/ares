@@ -23,12 +23,12 @@
                     <ul class="nav mb-5 justify-content-center ">
                         <li class="nav-item mx-5">
                             <div class="btn bg-dark">
-                                <NuxtLink to="/" class="nav-link text-light" href="#">Home</NuxtLink>
+                                <NuxtLink to="/" class="nav-link" href="#">Home</NuxtLink>
                             </div>
                         </li>
                         <li class="nav-item mx-5">
                             <div class="btn bg-dark">
-                                <NuxtLink to="/live" class="nav-link text-light" href="#">Live</NuxtLink>
+                                <NuxtLink to="/live" class="nav-link" href="#">Live</NuxtLink>
                             </div>
                         </li>
                     </ul>

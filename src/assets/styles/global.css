@@ -9,7 +9,13 @@ img {
 table {
     width: 100%;
     font-family: arial, sans-serif;
+    color: white !important;
 }
+
+.nav-link{
+    color: white !important;
+}
+
 #table { 
     border: 1px solid white;    
 }
