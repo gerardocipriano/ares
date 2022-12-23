@@ -124,14 +124,15 @@ To get a local copy up and running follow these simple example steps.
    git clone https://github.com/gerardocipriano/ares.git
    ```
 2. On Arduino IDE, install the following libraries: https://github.com/256dpi/arduino-mqtt, https://github.com/ChuckBell/MySQL_Connector_Arduino
-3. Make sure to adjust the IP in the code, you should enter a valid IP for your network (right class, not taken)
-3. Upload on Arduino the sketch named "ares_MQTT_customBuild_A1_API.ino"
-4. Open the project folder with VSC
-5. Install NPM packages
+3. Make sure to adjust the IPs in the code, you should enter a valid IP for your network (right class, not taken) adn for your DB
+4. Fill with your parameters the env.htemplate file, then rename it in env.h and import it in your sketch
+5. Upload on Arduino the sketch named "ares_MQTT_customBuild_A1_API_env.ino"
+6. Open the project folder with VSC
+7. Install NPM packages
    ```sh
    npm install
    ```
-6. Enter in the dev mode
+8. Enter in the dev mode
    ```sh
    npm run dev
    ```
