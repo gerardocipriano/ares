@@ -3,24 +3,26 @@
 #include <MySQL_Cursor.h>
 #include <SPI.h>
 #include <MQTT.h>
+#include "env.h"
+
 
 #define REQ_BUF_SZ 70
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xFD};
 IPAddress ip(192, 168, 0, 159); // IP address, may need to change depending on network
-
 IPAddress server_addr(20, 85, 184, 109); // IP of the MySQL *server* here
 
-char user[] = "ares_svc_a1";          // MySQL user login username
-char password[] = "gRaNdesThrOpocTo"; // MySQL user login password
 
 // Sample query
 char INSERT_DATA[] = "INSERT INTO ares.measurements (`sensor`, `location`, `temperature`, `humidity`) VALUES ('%s', '%s', '%s', %d)";
 char query[128];
 char temperature[10];
+long randNumber;
+int randHumidity;
+float flrandNumber;
 
-char deviceName[] = "A1";
-char location[] = "MODENA";
+char deviceName[] = DEVICE_ID;
+char location[] = DEVICE_LOCATION;
 unsigned long lastMillis;
 
 EthernetClient net;
@@ -34,7 +36,7 @@ char req_index = 0;              // index into HTTP_req buffer
 void connect()
 {
   Serial.print("connecting...");
-  while (!client.connect("A1", "aresmqtt", "CA08Qk33rggTAUpr"))
+  while (!client.connect(DEVICE_ID, SHIFTR_USER, SHIFTR_SECRET))
   {
     Serial.print(".");
     delay(1000);
@@ -57,17 +59,17 @@ void messageReceived(String &topic, String &payload)
   // or push to a queue and handle it in the loop after calling `client.loop()`.
 }
 
-void sendData()
+void sendData(float randTemp, int randHumidity)
 {
 
-  if (conn.connect(server_addr, 3306, user, password))
+  if (conn.connect(server_addr, 3306, SQL_USER, SQL_PASSWORD))
   {
     delay(1000);
     // Initiate the query class instance
     MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
     // Save
-    dtostrf(50.12, 1, 1, temperature);
-    sprintf(query, INSERT_DATA, deviceName, location, temperature, 10);
+    dtostrf(randTemp, 1, 1, temperature);
+    sprintf(query, INSERT_DATA, deviceName, location, temperature, randHumidity);
     // Execute the query
     cur_mem->execute(query);
     // Note: since there are no results, we do not need to read any data
@@ -124,6 +126,7 @@ char StrContains(char *str, char *sfind)
 void setup()
 {
 
+  randomSeed(analogRead(0));
   SPI.begin();
 
   // start the Ethernet connection
@@ -147,7 +150,7 @@ void setup()
     Serial.println("Ethernet cable is not connected.");
   }
 
-  client.begin("aresmqtt.cloud.shiftr.io", net);
+  client.begin(SHIFTR_ADDRESS, net);
   client.onMessage(messageReceived);
   client.publish("/MySQL", "Setup");
 
@@ -157,13 +160,17 @@ void setup()
 void loop()
 {
 
+  randNumber = random(-1000, 5000);
+  randHumidity =random(10,100);
+  flrandNumber = (float)randNumber / 100.000;
+  
   client.loop();
   if (!client.connected())
   {
     connect();
   }
 
-  if (millis() - lastMillis >= 1 * 60 * 1000UL)
+  if (millis() - lastMillis >= 2 * 60 * 1000UL)
   {
     if (!client.connected())
     {
@@ -172,7 +179,7 @@ void loop()
     Serial.println("Schedule ------");
     client.publish("/MySQL", "Data written on DB");
     lastMillis = millis(); // get ready for the next iteration
-    sendData();
+    sendData(flrandNumber, randHumidity);
     Serial.println("********** ------");
   }
 
@@ -214,16 +221,17 @@ void loop()
           // Ajax request - send XML file
 
           // open requested web page file
-          if (StrContains(HTTP_req, "GET / ") || StrContains(HTTP_req, "GET /refresh"))
+          if (StrContains(HTTP_req, "GET /refresh"))
           {
             net.println("HTTP/1.1 200 OK");
-            sendData();
+            sendData(flrandNumber,randHumidity);
+            delay(1);   // give the web browser time to receive the data
+            net.stop(); // close the connection
           }
         }
       }
     }
-    delay(1);   // give the web browser time to receive the data
-    net.stop(); // close the connection
+
   }
   if (!client.connected())
   {

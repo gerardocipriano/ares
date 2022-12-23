@@ -77,7 +77,7 @@
 ## About The Project
 <br />
 <div align="center">
-  <a href="https://github.com/gerardocipriano/isw">
+  <a href="https://github.com/gerardocipriano/ares">
     <img src="images/logo_transparent.png" alt="Logo" width="200">
   </a>
   <p align="center">
@@ -107,26 +107,33 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+  Hardware:
+  1. Arduino Mega
+  2. Ethernet Shield
+  3. Ethernet Cable
+
+  Software:
+  1. Arduino IDE
+  2. Node.js (for web portal)
+
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repository on your local machine
    ```sh
    git clone https://github.com/gerardocipriano/ares.git
    ```
-3. Install NPM packages
+2. On Arduino IDE, install the following libraries: https://github.com/256dpi/arduino-mqtt, https://github.com/ChuckBell/MySQL_Connector_Arduino
+3. Make sure to adjust the IP in the code, you should enter a valid IP for your network (right class, not taken)
+3. Upload on Arduino the sketch named "ares_MQTT_customBuild_A1_API.ino"
+4. Open the project folder with VSC
+5. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+6. Enter in the dev mode
+   ```sh
+   npm run dev
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -153,15 +160,15 @@ Mandatory features:
     - [x] Network connection via ethernet shield
     - [x] Connection to MySQL DB
     - [x] Writing measurements on DB
+    - [x] API /refresh for manual sending of data
+    - [x] Sending notification status to MQTT
 
 - [ ] Develop web portal
     - [x] Build HTML, CSS and JS
     - [x] Connection to MySQL DB
     - [x] Show measurements data
 
-Optional features:
 
-- [ ] Forcing collect of temperature and humidity via web interface
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
