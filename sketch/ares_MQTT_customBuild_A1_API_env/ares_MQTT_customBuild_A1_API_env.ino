@@ -90,7 +90,7 @@ void StrClear(char *str, char length)
 
 // searches for the string sfind in the string str
 // returns 1 if string found
-// returns 0 if stßy Abrefa ring not found
+// returns 0 if ring not found
 char StrContains(char *str, char *sfind)
 {
   char found = 0;
