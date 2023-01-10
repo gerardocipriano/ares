@@ -45,8 +45,8 @@ void connect()
   Serial.println("\nconnected to MQTT!");
 
   client.subscribe("/MySql");
-  client.publish("/MySQL", "Funzione di connessione");
-  // client.unsubscribe("/hello");
+  client.publish("/MySql", String(deviceName)+ " connesso");
+  client.unsubscribe("/MySQL");
 }
 
 void messageReceived(String &topic, String &payload)
@@ -89,8 +89,8 @@ void StrClear(char *str, char length)
 }
 
 // searches for the string sfind in the string str
-// returns 1 if string found
-// returns 0 if ring not found
+// returns 1 if the string is found
+// returns 0 if the string is not found
 char StrContains(char *str, char *sfind)
 {
   char found = 0;
@@ -177,7 +177,7 @@ void loop()
       connect();
     }
     Serial.println("Schedule ------");
-    client.publish("/MySQL", "Data written on DB");
+    client.publish("/MySql", "Temperature:" + String(flrandNumber) + ", Humidity(%):" + String(randHumidity));
     lastMillis = millis(); // get ready for the next iteration
     sendData(flrandNumber, randHumidity);
     Serial.println("********** ------");
@@ -191,7 +191,7 @@ void loop()
     {
       connect();
     }
-    client.publish("/MySQL", "Data written on DB");
+    client.publish("/MySql", "Temperature:" + String(flrandNumber) + ", Humidity(%):" + String(randHumidity));
     boolean currentLineIsBlank = true;
     String postText = "";
     while (net.connected())
@@ -220,12 +220,18 @@ void loop()
           // web page or XML page is requested
           // Ajax request - send XML file
 
-          // open requested web page file
+          // open requested
           if (StrContains(HTTP_req, "GET /refresh"))
           {
             net.println("HTTP/1.1 200 OK");
             sendData(flrandNumber,randHumidity);
-            delay(1);   // give the web browser time to receive the data
+            delay(2000);   // give the web browser time to receive the data
+            net.stop(); // close the connection
+          }
+          else
+          {
+            net.println("HTTP/1.1 404 NOT FOUND");
+            delay(2000);   // give the web browser time to receive the data
             net.stop(); // close the connection
           }
         }

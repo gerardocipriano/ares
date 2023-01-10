@@ -75,8 +75,6 @@ methods: {
     $fetch("http://192.168.0.159/refresh", {
       method: "GET",
     })
-      .then(() => window.location.href = "/")
-      .catch((e) => alert(e))
   }
 
 }
