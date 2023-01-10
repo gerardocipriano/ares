@@ -31,6 +31,11 @@
                                 <NuxtLink to="/live" class="nav-link" href="#">Live</NuxtLink>
                             </div>
                         </li>
+                        <li class="nav-item mx-5">
+                            <div  @click.prevent="getTemperature" class="btn bg-dark">
+                                <a class="nav-link" href="#">Refresh</a>
+                            </div>
+                        </li>
                     </ul>
                     <slot />
                 </div>
@@ -59,3 +64,22 @@
 } */
 </style>
 
+<script>
+
+export default defineComponent({
+
+
+methods: {
+  getTemperature() {
+    console.log("ciauz")
+    $fetch("http://192.168.0.159/refresh", {
+      method: "GET",
+    })
+      .then(() => window.location.href = "/")
+      .catch((e) => alert(e))
+  }
+
+}
+
+})
+</script>
