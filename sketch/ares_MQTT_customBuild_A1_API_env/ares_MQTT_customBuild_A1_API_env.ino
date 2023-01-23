@@ -5,29 +5,43 @@
 #include <MQTT.h>
 #include "env.h"
 
-
+// Define the size of the buffer for the HTTP request
 #define REQ_BUF_SZ 70
 
+// Set the device's MAC address
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xFD};
-IPAddress ip(192, 168, 0, 159); // IP address, may need to change depending on network
-IPAddress server_addr(20, 85, 184, 109); // IP of the MySQL *server* here
 
+// Set the device's IP address
+IPAddress ip(192, 168, 0, 159);
 
-// Sample query
+// Set the IP address of the MySQL server
+IPAddress server_addr(20, 85, 184, 109);
+
+// Sample query for inserting data into the MySQL database
 char INSERT_DATA[] = "INSERT INTO ares.measurements (`sensor`, `location`, `temperature`, `humidity`) VALUES ('%s', '%s', '%s', %d)";
+
+// Query buffer
 char query[128];
+
+// Buffer for storing temperature data
 char temperature[10];
+
+// Variables for storing random data
 long randNumber;
 int randHumidity;
 float flrandNumber;
 
+// Device name and location
 char deviceName[] = DEVICE_ID;
 char location[] = DEVICE_LOCATION;
+
+// Variable for storing the last time data was sent
 unsigned long lastMillis;
 
 EthernetClient net;
+EthernetClient net2;
 EthernetServer server(80); // create a server at port 80
-MySQL_Connection conn((Client *)&net);
+MySQL_Connection conn((Client *)&net2);
 MQTTClient client;
 
 char HTTP_req[REQ_BUF_SZ] = {0}; // buffered HTTP request stored as null terminated string
@@ -45,8 +59,8 @@ void connect()
   Serial.println("\nconnected to MQTT!");
 
   client.subscribe("/MySql");
-  client.publish("/MySql", String(deviceName)+ " connesso");
-  client.unsubscribe("/MySQL");
+  client.publish("/MySQL", "Funzione di connessione");
+  // client.unsubscribe("/hello");
 }
 
 void messageReceived(String &topic, String &payload)
@@ -75,7 +89,7 @@ void sendData(float randTemp, int randHumidity)
     // Note: since there are no results, we do not need to read any data
     // Deleting the cursor also frees up memory used
     delete cur_mem;
-
+    client.publish("/MySQL", "Temp:" + String(flrandNumber) + ", Hum: " + String(randHumidity));
     Serial.println("Data recorded SERIAL");
   }
 }
@@ -89,8 +103,8 @@ void StrClear(char *str, char length)
 }
 
 // searches for the string sfind in the string str
-// returns 1 if the string is found
-// returns 0 if the string is not found
+// returns 1 if string found
+// returns 0 if stßy Abrefa ring not found
 char StrContains(char *str, char *sfind)
 {
   char found = 0;
@@ -177,7 +191,6 @@ void loop()
       connect();
     }
     Serial.println("Schedule ------");
-    client.publish("/MySql", "Temperature:" + String(flrandNumber) + ", Humidity(%):" + String(randHumidity));
     lastMillis = millis(); // get ready for the next iteration
     sendData(flrandNumber, randHumidity);
     Serial.println("********** ------");
@@ -191,7 +204,6 @@ void loop()
     {
       connect();
     }
-    client.publish("/MySql", "Temperature:" + String(flrandNumber) + ", Humidity(%):" + String(randHumidity));
     boolean currentLineIsBlank = true;
     String postText = "";
     while (net.connected())
@@ -220,19 +232,14 @@ void loop()
           // web page or XML page is requested
           // Ajax request - send XML file
 
-          // open requested
+          // open requested web page file
           if (StrContains(HTTP_req, "GET /refresh"))
           {
             net.println("HTTP/1.1 200 OK");
             sendData(flrandNumber,randHumidity);
             delay(2000);   // give the web browser time to receive the data
             net.stop(); // close the connection
-          }
-          else
-          {
-            net.println("HTTP/1.1 404 NOT FOUND");
             delay(2000);   // give the web browser time to receive the data
-            net.stop(); // close the connection
           }
         }
       }
