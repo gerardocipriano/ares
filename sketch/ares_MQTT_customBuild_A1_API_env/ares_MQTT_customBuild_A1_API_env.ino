@@ -3,6 +3,7 @@
 #include <MySQL_Cursor.h>
 #include <SPI.h>
 #include <MQTT.h>
+
 #include "env.h"
 
 // Define the size of the buffer for the HTTP request
@@ -32,17 +33,17 @@ int randHumidity;
 float flrandNumber;
 
 // Device name and location
-char deviceName[] = DEVICE_ID;
+char deviceName[] = DEVIC E_ID;
 char location[] = DEVICE_LOCATION;
 
 // Variable for storing the last time data was sent
 unsigned long lastMillis;
 
-EthernetClient net;
-EthernetClient net2;
+EthernetClient netMqtt;   
+EthernetClient netSql;      
 EthernetServer server(80); // create a server at port 80
-MySQL_Connection conn((Client *)&net2);
-MQTTClient client;
+MySQL_Connection conn((Client *)&netSql);
+MQTTClient clientMqtt;
 
 char HTTP_req[REQ_BUF_SZ] = {0}; // buffered HTTP request stored as null terminated string
 char req_index = 0;              // index into HTTP_req buffer
@@ -50,7 +51,7 @@ char req_index = 0;              // index into HTTP_req buffer
 void connect()
 {
   Serial.print("connecting...");
-  while (!client.connect(DEVICE_ID, SHIFTR_USER, SHIFTR_SECRET))
+  while (!clientMqtt.connect(DEVICE_ID, SHIFTR_USER, SHIFTR_SECRET))
   {
     Serial.print(".");
     delay(1000);
@@ -58,9 +59,9 @@ void connect()
 
   Serial.println("\nconnected to MQTT!");
 
-  client.subscribe("/MySql");
-  client.publish("/MySQL", "Funzione di connessione");
-  // client.unsubscribe("/hello");
+  clientMqtt.subscribe("/MySql");
+  clientMqtt.publish("/MySQL", "Funzione di connessione");
+  // clientMqtt.unsubscribe("/hello");
 }
 
 void messageReceived(String &topic, String &payload)
@@ -89,7 +90,7 @@ void sendData(float randTemp, int randHumidity)
     // Note: since there are no results, we do not need to read any data
     // Deleting the cursor also frees up memory used
     delete cur_mem;
-    client.publish("/MySQL", "Temp:" + String(flrandNumber) + ", Hum: " + String(randHumidity));
+    clientMqtt.publish("/MySQL", "Temp:" + String(flrandNumber) + ", Hum: " + String(randHumidity));
     Serial.println("Data recorded SERIAL");
   }
 }
@@ -104,7 +105,7 @@ void StrClear(char *str, char length)
 
 // searches for the string sfind in the string str
 // returns 1 if string found
-// returns 0 if stßy Abrefa ring not found
+// returns 0 if the string not found
 char StrContains(char *str, char *sfind)
 {
   char found = 0;
@@ -164,9 +165,9 @@ void setup()
     Serial.println("Ethernet cable is not connected.");
   }
 
-  client.begin(SHIFTR_ADDRESS, net);
-  client.onMessage(messageReceived);
-  client.publish("/MySQL", "Setup");
+  clientMqtt.begin(SHIFTR_ADDRESS, netMqtt);
+  clientMqtt.onMessage(messageReceived);
+  clientMqtt.publish("/MySQL", "Setup");
 
   connect();
 }
@@ -178,15 +179,15 @@ void loop()
   randHumidity =random(10,100);
   flrandNumber = (float)randNumber / 100.000;
   
-  client.loop();
-  if (!client.connected())
+  clientMqtt.loop();
+  if (!clientMqtt.connected())
   {
     connect();
   }
 
   if (millis() - lastMillis >= 2 * 60 * 1000UL)
   {
-    if (!client.connected())
+    if (!clientMqtt.connected())
     {
       connect();
     }
@@ -196,21 +197,21 @@ void loop()
     Serial.println("********** ------");
   }
 
-  EthernetClient net = server.available(); // try to get client
+  EthernetClient netMqtt = server.available(); // try to get client
 
-  if (net)
+  if (netMqtt)
   { // got client?
-    if (!client.connected())
+    if (!clientMqtt.connected())
     {
       connect();
     }
     boolean currentLineIsBlank = true;
     String postText = "";
-    while (net.connected())
+    while (netMqtt.connected())
     {
-      if (net.available())
+      if (netMqtt.available())
       {                      // client data available to read
-        char c = net.read(); // read 1 byte (character) from client
+        char c = netMqtt.read(); // read 1 byte (character) from client
 
         // buffer first part of HTTP request in HTTP_req array (string)
         // leave last element in array as 0 to null terminate string (REQ_BUF_SZ - 1)
@@ -227,7 +228,7 @@ void loop()
         if (c == '\n' && currentLineIsBlank)
         {
 
-          net.println("HTTP/1.1 200 OK");
+          netMqtt.println("HTTP/1.1 200 OK");
           // remainder of header follows below, depending on if
           // web page or XML page is requested
           // Ajax request - send XML file
@@ -235,19 +236,15 @@ void loop()
           // open requested web page file
           if (StrContains(HTTP_req, "GET /refresh"))
           {
-            net.println("HTTP/1.1 200 OK");
+            netMqtt.println("HTTP/1.1 200 OK");
             sendData(flrandNumber,randHumidity);
             delay(2000);   // give the web browser time to receive the data
-            net.stop(); // close the connection
+            netMqtt.stop(); // close the connection
             delay(2000);   // give the web browser time to receive the data
           }
         }
       }
     }
 
-  }
-  if (!client.connected())
-  {
-    connect();
   }
 }
